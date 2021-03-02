@@ -28,14 +28,14 @@ const App = () => {
     const photosUrl = inputValue ? `${url}&query=${inputValue}` : url;
     // const photosUrl = query ? `${url}&query=${query}` : url;
     fetch(photosUrl)
-    .then(res => res.json())
-    .then(data => setPhotos(data));
+      .then(res => res.json())
+      .then(data => setPhotos(data));
   };
 
   return (
     <div className="box">
       <form id="unsplash" className="unsplash-form" onSubmit={handleSubmit}>
-        <label htmlFor="search">Search Photos on Unsplash</label> 
+        <label htmlFor="search">Search Photos on Unsplash</label>
         <input
           ref={queryInput}
           placeholder="Enter..."
@@ -48,7 +48,7 @@ const App = () => {
           onChange={handleChange}
           autoFocus
         />
-        <button 
+        <button
           type="submit"
           className="submit-button"
         >Submit
