@@ -25,11 +25,8 @@ const App = () => {
     e.preventDefault();
     const photosUrl = inputValue ? `${url}&query=${inputValue}` : url;
     fetch(photosUrl)
-      .then(res => res.json())
-      .then(data => {
-        setPhotos(data);
-        console.log({data});
-      });
+    .then(res => res.json())
+    .then(data => setPhotos(data));
   };
 
   useEffect(() => {
@@ -41,13 +38,12 @@ const App = () => {
       <form id="unsplash" className="unsplash-form" onSubmit={handleSubmit}>
         <label htmlFor="search">Search Photos on Unsplash</label>
         <input
-          placeholder="Enter..."
           type="search"
           id="search"
           className="search-input"
-          style={{ margin: '0 0 20px 5px' }}
           value={inputValue}
           onChange={handleChange}
+          placeholder="Enter..."
           autoFocus
         />
         <button
@@ -59,7 +55,6 @@ const App = () => {
       
       <Photos photos={photos} />
       
-
     </div>
   );
 };

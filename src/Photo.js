@@ -5,12 +5,14 @@ const Photo = ({photo}) => {
     <li key={photo.id}>
       <a 
         href={photo.urls.full} 
+        title={photo.alt_description || photo.id}
         target="_blank" 
         rel="noopener noreferrer" 
-        alt={photo.alt_description || photo.id} 
-        title={photo.alt_description || photo.id}
       >
-        <img src={photo.urls.regular} />
+        <img 
+          src={photo.urls.regular} 
+          alt={photo.alt_description || photo.id} 
+        />
       </a>
     </li>
   );
