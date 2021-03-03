@@ -1,7 +1,7 @@
 
 import * as React from 'react';
 import Photos from './Photos.js';
-import './App.css';
+import '../App.css';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -34,7 +34,7 @@ const App = () => {
   });
 
   return (
-    <div className="box">
+    <section className="box">
       <form id="unsplash" className="unsplash-form" onSubmit={handleSubmit}>
         <label htmlFor="search">Search Photos on Unsplash</label>
         <input
@@ -55,7 +55,7 @@ const App = () => {
       
       <Photos photos={photos} />
       
-    </div>
+    </section>
   );
 };
 
